@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\RifasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 /*
@@ -22,6 +23,4 @@ Route::get('/rifas', function () {
     return view('rifas', ['busca'=>$busca] );
 });
 
-Route::get('/rifa/{id?}', function ($id = null) {
-    return view('rifa',['id' => $id]);
-});
+Route::get('/rifa/{id}', [RifasController::class, 'show'])->name('rifa');

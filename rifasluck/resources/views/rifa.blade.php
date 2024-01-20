@@ -6,13 +6,19 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
-@if($id != null)
+@if($rifa != null)
 
 <p>
 
      Exibindo Id:
-     {{ $id }}
+     {{ $rifa->id }}
 </p>
 @endif
 
+<p> {{ $rifa->titulo }} </p>
+<p> {{ $rifa->descricao }} </p>
+<p> {{ $rifa->cotas_disponiveis }} </p>
+
+
 @endsection
+

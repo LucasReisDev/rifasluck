@@ -51,15 +51,15 @@
         <div class="row">
             <div class="col-sm12 col-md-2">
                 <img  class="img-fluid mb-1 " src="/img/iph.png" alt="" >
-                <p>Descrição da Rifa 1</p>
+                <p style="margin-left:50%; ">iphone 15 - ou 10 mil no pix</p>
             </div>
             <div class="col-sm12 col-md-2">
                 <img class="img-fluid mb-1" src="/img/car.jpg" alt="" >
-                <p>Descrição da Rifa 2</p>
+                <p style="margin-left:50%;">Toro - ou 50 mil no pix</p>
             </div>
             <div class="col-sm12 col-md-2">
                 <img class="img-fluid mb-1" src="/img/mt.png" alt="" >
-                <p>Descrição da Rifa </p>
+                <p style="margin-left:50%;">MT 03 - ou 20mil no pix </p>
             </div>
         </div>
     </div>
