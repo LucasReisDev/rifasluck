@@ -18,9 +18,6 @@ use App\Http\Controllers\Controller;
 Route::get('/', [EventController::class,'index']);
 Route::get('/events/create', [EventController::class,'index']);
 
-Route::get('/rifas', function () {
-    $busca = request('search');
-    return view('rifas', ['busca'=>$busca] );
-});
+Route::get('/rifas', [RifasController::class, 'index'])->name('rifas');
 
 Route::get('/rifa/{id}', [RifasController::class, 'show'])->name('rifa');

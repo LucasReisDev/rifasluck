@@ -10,7 +10,7 @@ class RifasController extends Controller
     public function index()
     {
         $rifas = Rifa::all();
-        return view('rifas.index', ['rifas' => $rifas]);
+        return view('rifas', ['rifas' => $rifas]);
     }
 
     public function show($id)
