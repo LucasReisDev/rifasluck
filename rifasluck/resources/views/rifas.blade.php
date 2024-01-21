@@ -60,7 +60,7 @@
 <div id="cards-container" class="row">
 @foreach($rifas as $rifa)
 <div class="card col-md-9">
-    <img class="img-fluid mb-1" src="/img/iph.png" alt="">
+    <img class="img-fluid mb-1" src="{{ asset('img/' . $rifa->image) }}" alt="">
         <div class="card-body">
                 <h5>
                 Título:{{ $rifa->titulo }}
@@ -73,8 +73,5 @@
  </div>
 @endforeach
 </div>
-
-
-
 
 @endsection

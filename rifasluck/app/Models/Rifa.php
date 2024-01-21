@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rifa extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'titulo',
+        'descricao',
+        'cotas_disponiveis',
+        'image',
+        // Adicione outros campos conforme necessário
+    ];
 }

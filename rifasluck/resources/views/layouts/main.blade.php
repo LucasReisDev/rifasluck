@@ -42,17 +42,47 @@
       <div class="modal-body">
         <!-- Formulário de Registro -->
         <form id="formularioRegistro">
-          <h3>Realizar Cadastro</h3>
-          <!-- Adicione aqui os campos do formulário de registro -->
-          <button type="submit" class="btn btn-primary">Registrar</button>
-        </form>
+        <h3>Realizar Cadastro</h3>
 
-        <!-- Formulário de Login -->
-        <form id="formularioLogin">
-          <h3>Fazer Login</h3>
-          <!-- Adicione aqui os campos do formulário de login -->
-          <button type="submit" class="btn btn-success">Entrar</button>
-        </form>
+        <!-- Campo Nome -->
+        <div class="mb-3">
+          <label for="nomeRegistro" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="nomeRegistro" name="nomeRegistro" required>
+        </div>
+
+        <!-- Campo E-mail -->
+        <div class="mb-3">
+          <label for="emailRegistro" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="emailRegistro" name="emailRegistro" required>
+        </div>
+
+        <!-- Campo Senha -->
+        <div class="mb-3">
+          <label for="senhaRegistro" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="senhaRegistro" name="senhaRegistro" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+
+      <!-- Formulário de Login -->
+      <form id="formularioLogin">
+        <h3 style="margin-bottom:10px;">Fazer Login</h3>
+
+        <!-- Campo E-mail -->
+        <div class="mb-3">
+          <label for="emailLogin" class="form-label">E-mail</label>
+          <input type="email" class="form-control" id="emailLogin" name="emailLogin" required>
+        </div>
+
+        <!-- Campo Senha -->
+        <div class="mb-3">
+          <label for="senhaLogin" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="senhaLogin" name="senhaLogin" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Entrar</button>
+      </form>
       </div>
     </div>
   </div>

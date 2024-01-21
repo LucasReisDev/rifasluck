@@ -16,8 +16,15 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', [EventController::class,'index']);
+
 Route::get('/events/create', [EventController::class,'index']);
 
 Route::get('/rifas', [RifasController::class, 'index'])->name('rifas');
 
 Route::get('/rifa/{id}', [RifasController::class, 'show'])->name('rifa');
+
+Route::get('/criar-rifa', [RifasController::class, 'create'])->name('rifas.create');
+
+Route::post('/criar-rifa', [RifasController::class, 'store'])->name('rifas.store');
+
+
