@@ -49,17 +49,17 @@
     <h2 style="text-align: center;">Rifas em Destaque</h2>
     <div class="container mt-3">
         <div class="row">
-            <div class="col-sm12 col-md-2">
-                <img  class="img-fluid mb-1 " src="/img/iph.png" alt="" >
-                <p style="margin-left:50%; ">iphone 15 - ou 10 mil no pix</p>
+            <div class="col-sm12 col-md-">
+                <img  style="margin-left:10%;" class="img-fluid mb-1 " src="/img/iph.png" alt="" >
+                <p style="margin-left:15%;">iphone 15 - ou 10 mil no pix</p>
             </div>
             <div class="col-sm12 col-md-2">
-                <img class="img-fluid mb-1" src="/img/car.jpg" alt="" >
-                <p style="margin-left:50%;">Toro - ou 50 mil no pix</p>
+                <img style="margin-left:10%;" class="img-fluid mb-1" src="/img/car.jpg" alt="" >
+                <p style="margin-left:15%;">Toro - ou 50 mil no pix</p>
             </div>
             <div class="col-sm12 col-md-2">
-                <img class="img-fluid mb-1" src="/img/mt.png" alt="" >
-                <p style="margin-left:50%;">MT 03 - ou 20mil no pix </p>
+                <img style="margin-left:10%;" class="img-fluid mb-1" src="/img/mt.png" alt="" >
+                <p style="margin-left:15%;">MT 03 - ou 20mil no pix </p>
             </div>
         </div>
     </div>
