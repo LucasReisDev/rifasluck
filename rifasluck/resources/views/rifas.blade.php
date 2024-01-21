@@ -56,22 +56,18 @@
 </nav>
 </nav>
 
-<div id="rifas-container" class="col-md-20">
-<div id="cards-container" class="row">
-@foreach($rifas as $rifa)
-<div class="card col-md-9">
-    <img class="img-fluid mb-1" src="{{ asset('img/' . $rifa->image) }}" alt="">
-        <div class="card-body">
-                <h5>
-                Título:{{ $rifa->titulo }}
-                </h5>
-                <p>
-                Id:{{ $rifa->id }}
-                </p>
+<div id="rifas-container" class="container mt-5">
+    <div id="cards-container" class="row text-center d-flex justify-content-center">
+        @foreach($rifas as $rifa)
+            <div class="card col-md-9">
+                <div class="card-body d-flex align-items-center flex-column">
+                    <img class="img-fluid mb-1" src="{{ asset('img/' . $rifa->image) }}" alt="">
+                    <h5 class="mt-2">Título: {{ $rifa->titulo }}</h5>
+                    <p>ID: {{ $rifa->id }}</p>
+                </div>
             </div>
-        </div>
- </div>
-@endforeach
+        @endforeach
+    </div>
 </div>
 
 @endsection
