@@ -17,9 +17,9 @@ Route::get('/rifas', [RifasController::class, 'index'])->name('rifas');
 
 Route::get('/rifa/{id}', [RifasController::class, 'show'])->name('rifa');
 
-Route::get('/criar-rifa', [RifasController::class, 'create'])->name('rifas.create');
+Route::get('/dashboard', [RifasController::class, 'create'])->name('dashboard');
 
-Route::post('/criar-rifa', [RifasController::class, 'store'])->name('rifas.store');
+Route::post('/dashboard', [RifasController::class, 'store'])->name('rifas.store');
 
 
 

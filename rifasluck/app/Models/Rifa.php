@@ -14,4 +14,8 @@ class Rifa extends Model
         'image',
         // Adicione outros campos conforme necessário
     ];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }

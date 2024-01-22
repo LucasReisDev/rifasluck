@@ -34,7 +34,7 @@ class UserController extends Controller
         Auth::login($user);
 
         // Redireciona para a página desejada após o registro
-        return redirect('/criar-rifa');
+        return redirect('/dashboard');
     }
 
     public function login(Request $request)
@@ -48,7 +48,7 @@ class UserController extends Controller
         // Tentativa de autenticação
         if (Auth::attempt(['email' => $request->input('emailLogin'), 'password' => $request->input('senhaLogin')])) {
             // Autenticação bem-sucedida, redireciona para a página desejada
-            return redirect('/criar-rifas');
+            return redirect('/dashboard');
         }
 
         // Autenticação falhou, redireciona de volta para o formulário de login com uma mensagem de erro

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Rifa;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -19,34 +20,51 @@ class RifasController extends Controller
         return view('rifa', ['rifa' => $rifa]);
     }
 
+
+
     public function create()
     {
-    return view('create');
+        // Verificar se o usuário está autenticado
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        // Exibir a view de criação de rifa
+        return view('rifas.create');
     }
 
     public function store(Request $request)
-    {
-    // Validação dos dados do formulário aqui, se necessário
+{
+    // Validar e armazenar os dados da rifa
+    $request->validate([
+        'titulo' => 'required',
+        'descricao' => 'required',
+        'cotas_disponiveis' => 'required|numeric',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
 
-    // Criação da nova rifa no banco de dados
+    // Obter o usuário autenticado
+    $user = Auth::user();
 
+    // Criar a rifa associada ao usuário
     $rifa = new Rifa([
         'titulo' => $request->input('titulo'),
         'descricao' => $request->input('descricao'),
         'cotas_disponiveis' => $request->input('cotas_disponiveis'),
-        // Adicione outros campos conforme necessário
-    ]);
-    if($request->hasFile('image') && $request->file('public/img')->isValid()){
 
+    ]);
+    if($request->hasFile('image') && $request->file('image')->isvalid()) {
         $requestImage = $request->image;
         $extension = $requestImage->extension();
-        $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . ".". $extension;
+        $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
         $requestImage->move(public_path("img"), $imageName);
-        $rifa->image = $imageName;
+        $rifa->image = $imageName;  
     }
-    $rifa->save();
 
-    // Redireciona para a página da rifa recém-criada ou para onde desejar
-    return redirect()->route('rifa', ['id' => $rifa->id]);
-    }
+    // Associar a rifa ao usuário
+    $user->rifas()->save($rifa);
+
+    // Redirecionar ou realizar outras ações necessárias
+    return redirect()->route('dashboard')->with('success', 'Rifa criada com sucesso!');
+}
 }

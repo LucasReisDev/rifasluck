@@ -61,18 +61,7 @@
                 <img style="margin-left:10%;" class="img-fluid mb-1" src="/img/mt.png" alt="" >
                 <p style="margin-left:15%;">MT 03 - ou 20mil no pix </p>
             </div>
-            <div class="col-sm12 col-md-2 ">
-                <img style="margin-left:10%; height:59%;" class="img-fluid mb-1" src="/img/out-0.png" alt="" >
-                <p style="margin-left:15%;">Rifa04 </p>
-            </div>
-            <div class="col-sm12 col-md-2">
-                <img style="margin-left:10%;  height:59%;" class="img-fluid mb-1" src="/img/out-0.png" alt="" >
-                <p style="margin-left:15%;"> Rifa05 </p>
-            </div>
-            <div class="col-sm12 col-md-2">
-                <img style="margin-left:10%;  height:59%;" class="img-fluid mb-1" src="/img/out-0.png" alt="" >
-                <p style="margin-left:15%;"> Rifa06 </p>
-            </div>
+
         </div>
     </div>
     </section>
