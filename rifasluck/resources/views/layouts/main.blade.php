@@ -15,6 +15,7 @@
 </head>
 <body>
 <header>
+    <h1 style="text-align: center;">RifasLuck</h1>
 <img style="margin: 10px;" src="/img/out-0.png" class="rounded mx-auto d-block" alt="...">
 
 
@@ -26,8 +27,18 @@
     </button>
     <div style="" class="collapse navbar-collapse text-center " id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a id="crieRifaLink" class="nav-link active" aria-current="page" href="#">Crie sua Rifa</a>
+        @guest
+        <a id="crieRifaLink" class="nav-link active" aria-current="page" href="#">Seja nosso parceiro</a>
+        @endguest
         <a class="nav-link" href="/rifas">Rifas Disponíveis</a>
+        @auth
+        <a id="nav-link" href="/dashboard" class="nav-link active" aria-current="page" href="#">Criar rifa</a>
+        <form action="/logout" method="POST">
+            @csrf
+        <a id="nav-link" href="/logout" class="nav-link active" aria-current="page" onclick="event.preventDefault();
+        this.closest('form').submit();">Sair</a>
+        </form>
+        @endauth
       </div>
     </div>
   </div>
@@ -40,49 +51,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- Formulário de Registro -->
-        <form id="formularioRegistro">
-        <h3>Realizar Cadastro</h3>
-
-        <!-- Campo Nome -->
-        <div class="mb-3">
-          <label for="nomeRegistro" class="form-label">Nome</label>
-          <input type="text" class="form-control" id="nomeRegistro" name="nomeRegistro" required>
-        </div>
-
-        <!-- Campo E-mail -->
-        <div class="mb-3">
-          <label for="emailRegistro" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="emailRegistro" name="emailRegistro" required>
-        </div>
-
-        <!-- Campo Senha -->
-        <div class="mb-3">
-          <label for="senhaRegistro" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="senhaRegistro" name="senhaRegistro" required>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Registrar</button>
-      </form>
-
-      <!-- Formulário de Login -->
-      <form id="formularioLogin">
-        <h3 style="margin-bottom:10px;">Fazer Login</h3>
-
-        <!-- Campo E-mail -->
-        <div class="mb-3">
-          <label for="emailLogin" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="emailLogin" name="emailLogin" required>
-        </div>
-
-        <!-- Campo Senha -->
-        <div class="mb-3">
-          <label for="senhaLogin" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="senhaLogin" name="senhaLogin" required>
-        </div>
-
-        <button type="submit" class="btn btn-success">Entrar</button>
-      </form>
+      <a href="{{ route('register') }}" class="btn btn-primary">Registrar</a>
+      <a href="{{ route('login') }}" class="btn btn-success">Entrar</a>
       </div>
     </div>
   </div>
@@ -96,7 +66,7 @@
 
 
     <footer>
-        <p>&copy; 2024 Site de Rifas. Todos os direitos reservados. RifaLucks @Lareistech</p>
+        <p>&copy; 2024 RifasLuck. Todos os direitos reservados.  @Lareistech</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
     <script>
