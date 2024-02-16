@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PagamentoController;
 use App\Http\Controllers\RifasController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +22,7 @@ Route::get('/dashboard', [RifasController::class, 'create'])->name('dashboard');
 
 Route::post('/dashboard', [RifasController::class, 'store'])->name('rifas.store');
 
-
+Route::post('/processar-pagamento', [PagamentoController::class, 'processarPagamento'])->name('pagamento.processar');
 
 Route::middleware([
     'auth:sanctum',
